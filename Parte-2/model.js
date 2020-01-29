@@ -32,12 +32,7 @@ let BookMarkToUpdate = {
             });
     },
     updateBookmark: function (bookmarkupdate) {
-        let test = bookmarkCollection.find(bookmarkupdate.id);
-        test = {
-            ...test,
-            ...bookmarkupdate
-        };
-        return Bookmark.updateOne(test)
+        return Bookmark.updateOne(bookmarkupdate)
             .then(bookmark => {
                 return bookmark;
             })

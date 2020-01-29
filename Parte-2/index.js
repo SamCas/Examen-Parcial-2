@@ -32,6 +32,7 @@ app.put('/api/bookmarks/:id', jsonParser, (req, res) => {
 			} else {
 				BookMarkToUpdate.updateBookmark(newBookmark)
 					.then(bookmark => {
+						res.statusMessage('Bookmark actualizado exitosamente.');
 						return res.status(201).json(bookmark);
 					})
 					.catch(error => {
